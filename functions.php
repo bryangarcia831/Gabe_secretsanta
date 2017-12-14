@@ -10,6 +10,9 @@ function loginProcess()
     {
         $username = $_POST['username'];
         $password = $_POST['password'];
+
+        ## This hashes the password
+        $password = password_hash($password, PASSWORD_DEFAULT);
         
         $sql = "SELECT *
             FROM users
